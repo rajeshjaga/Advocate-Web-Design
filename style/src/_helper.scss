@@ -1,0 +1,79 @@
+@use 'media';
+@use 'variables';
+.flex,
+%flex {
+  display: flex;
+  &-jc-sb {
+    justify-content: space-between;
+  }
+  &-jc-sa {
+    justify-content: space-around;
+  }
+  &-jc-se {
+    justify-content: space-evenly;
+  }
+  &-jc-c {
+    justify-content: center;
+  }
+  &-ai-c {
+    align-items: center;
+  }
+}
+@mixin widthMargin($width) {
+  width: $width;
+  margin: 0 auto;
+}
+%flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+%position-absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+%tablet-margin-center,
+.tablet-margin-center {
+  //device width below 689px
+  @include media.breakDown(medium) {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+%mobile-margin-center,
+.mobile-margin-center {
+  //device width below 1199px
+  @include media.breakDown(small) {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+%margin-center,
+.margin-center {
+  //not device specific
+  margin: 0 auto;
+}
+.text-center {
+  text-align: center;
+}
+.cta {
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.3125rem;
+  &-yellow {
+    color: variables.$blackColor;
+    background-color: variables.$yellowButtonBg;
+  }
+}
+.fw-bold {
+  font-weight: 700;
+}
+.fw-sm-bold {
+  font-weight: 600;
+}
+.not-show-df {
+  @include media.breakUp(medium) {
+    display: none;
+  }
+}

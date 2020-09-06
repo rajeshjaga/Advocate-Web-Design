@@ -1,0 +1,39 @@
+@use 'src/media';
+@use 'src/variables';
+@use 'src/helper';
+.hero {
+  min-width: 100%;
+  min-height: 90vh;
+  background: url("/img/Hero@2x.png") #eee;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+  padding-top: 5rem;
+  @include media.breakDown(large) {
+    background-image: url("/img/Hero@2x.png");
+  }
+  @include media.breakDown(medium) {
+    background-image: url("/img/Hero-T@2x.png");
+    background-position: center center;
+  }
+  @include media.breakDown(small) {
+    background-image: url("/img/Hero-M@2x.png");
+  }
+  @include media.breakUp(x-large) {
+    margin: 0 auto;
+  }
+}
+h1 {
+  color: variables.$whiteColor;
+  font-size: 4.25rem;
+  letter-spacing: 5pt;
+  line-height: 5rem;
+  font-weight: 700;
+  padding-top: 6rem;
+  margin-bottom: 2.5rem;
+}
+p {
+  width: 50%;
+  margin-bottom: 1rem;
+  @extend %margin-center;
+}

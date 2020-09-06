@@ -1,0 +1,47 @@
+@use 'src/variables';
+@use 'src/spacing';
+@use 'src/media';
+@use 'src/helper';
+nav {
+  // position: relative;
+  padding: spacing.$navPadding;
+  background: variables.$purpleColor;
+}
+img {
+  height: 4.5rem;
+  width: 4.6875rem;
+}
+.nav-btn {
+  height: 100%;
+  width: 100%;
+}
+li {
+  margin-left: 4.0625rem;
+}
+a {
+  color: variables.$whiteColor;
+}
+@include media.breakDown(small) {
+  ul {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+  li {
+    margin: 0;
+  }
+  ul.show {
+    width: 100%;
+    height: 30vh;
+    top: 15%;
+    flex-direction: column;
+    background-color: variables.$purpleColor;
+  }
+}
+@include media.breakDown(medium) {
+  li {
+    font-size: 75%;
+  }
+}
