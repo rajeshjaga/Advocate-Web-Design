@@ -1,7 +1,18 @@
 $navSPadding: 1rem 2.375rem;
-$navPadding: 0.9375rem 2.375rem;
+%navPadding {
+  padding-top: 0.9375rem;
+  padding-bottom: 0.9375rem;
+}
 $navBigPaddingpx: 3.375rem 2.375rem;
 %card-heading-padding {
   padding-top: 7.875rem;
   padding-bottom: 8.5rem;
+}
+%footer-padding {
+  padding: 40px 3.4375rem;
+}
+$width-padding: 3.4375rem;
+%main-padding {
+  padding-right: 3.4375rem;
+  padding-left: 3.4375rem;
 }

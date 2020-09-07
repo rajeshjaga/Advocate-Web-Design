@@ -1,0 +1,114 @@
+@use 'src/media';
+@use 'src/variables';
+@use 'src/helper';
+@use 'src/spacing';
+footer {
+  height: 100%;
+  width: 100%;
+  flex-wrap: wrap;
+  position: relative;
+  bottom: 0;
+  background-color: variables.$purpleColor;
+  color: variables.$desaturatePurple;
+  @extend %footer-padding;
+  .address {
+    h3 {
+      padding-top: 40px;
+    }
+    h5 {
+      padding-top: 20px;
+    }
+    .actual-address {
+      width: 60%;
+      padding-top: 17.4px;
+      @extend %mobile-margin-center;
+    }
+  }
+  .address,
+  .contact {
+    width: 50%;
+  }
+  .phone,
+  .mail {
+    margin-top: 20px;
+  }
+  h3,
+  h5 {
+    color: variables.$whiteColor;
+  }
+  .actual-address img,
+  .phone img,
+  .mail img {
+    height: auto;
+    width: 15px;
+    object-fit: cover;
+  }
+  .social-links {
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 30px;
+    svg {
+      &.fa-facebook-f,
+      &.fa-instagram,
+      &.fa-twitter {
+        display: inline-block;
+        height: 40px;
+        width: 40px;
+        color: variables.$whiteColor;
+        border: 1px solid variables.$whiteColor;
+        padding: 0.5em;
+        cursor: pointer;
+        border-radius: 50px;
+        margin: 0 1em;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          color: variables.$purpleColor;
+          background-color: variables.$whiteColor;
+        }
+        @include media.breakDown(small) {
+          width: 30px;
+          height: 30px;
+        }
+      }
+      &.fa-facebook-f {
+        margin: 0 1em 0 0;
+      }
+    }
+  }
+  @include media.breakDown(small) {
+    .logo {
+      width: 103px;
+      height: auto;
+    }
+    h3 {
+      font-size: 24px;
+    }
+    h5 {
+      font-size: 18px;
+    }
+    p {
+      font-size: 18px;
+    }
+    .address,
+    .contact {
+      width: 100%;
+      text-align: center;
+      > {
+        margin: 0 auto;
+      }
+    }
+
+    .contact {
+      margin-top: 20px;
+    }
+    .actual-address,
+    .phone,
+    .mail {
+      flex-direction: column;
+      margin: 15px auto;
+      img {
+        padding: 10px 0;
+      }
+    }
+  }
+}

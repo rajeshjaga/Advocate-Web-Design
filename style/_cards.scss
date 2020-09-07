@@ -38,8 +38,10 @@ p {
   @include helper.widthMargin(auto);
 }
 .cards {
-  .card.disabled {
-    display: none;
+  @include media.breakDown(small) {
+    .card.disabled {
+      display: none;
+    }
   }
 }
 #closeaccordian {
