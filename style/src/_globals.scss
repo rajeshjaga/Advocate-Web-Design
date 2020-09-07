@@ -15,11 +15,11 @@ body {
   font-family: "Poppins", sans-serif;
   box-sizing: inherit;
   overflow-x: hidden;
-  // body {
-  //   font-size: 85%;
   @include media.breakUp(x-large) {
-    display: none;
-    // }
+    width: 1366px;
+    display: flex;
+    flex-flow: column wrap;
+    margin: 0 auto;
   }
   @include media.breakDown(medium) {
     font-size: 85%;

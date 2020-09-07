@@ -20,6 +20,9 @@
     background-image: url("/img/Hero-M@2x.png");
   }
   @include media.breakUp(x-large) {
+    min-height: 65vh;
+    // min-height: fit-content;
+    background-size: 1366px 100%;
     margin: 0 auto;
   }
 }
