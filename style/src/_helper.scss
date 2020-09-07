@@ -77,3 +77,8 @@
     display: none;
   }
 }
+.not-show-mf {
+  @include media.breakUp(small) {
+    display: none;
+  }
+}

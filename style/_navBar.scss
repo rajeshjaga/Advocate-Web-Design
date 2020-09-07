@@ -2,14 +2,24 @@
 @use 'src/spacing';
 @use 'src/media';
 @use 'src/helper';
-
 nav {
+  position: sticky;
+  top: 0;
+  left: 0;
   padding: spacing.$navPadding;
   background: variables.$purpleColor;
+  z-index: 1;
+  @include media.breakDown(small) {
+    padding: spacing.$navSPadding;
+  }
 }
 img {
   height: 4.5rem;
   width: 4.6875rem;
+  @include media.breakDown(small) {
+    height: 42px;
+    width: 44px;
+  }
 }
 .nav-btn {
   height: 100%;
@@ -23,28 +33,48 @@ a {
 }
 @include media.breakDown(small) {
   ul {
-    position: fixed;
-    top: -100%;
+    position: absolute;
+    flex-direction: column;
+    background-color: variables.$purpleColor;
+    height: 0vh;
+    top: 0%;
+    opacity: 0;
     left: 0;
-    transition: all 0.3s ease;
     text-align: center;
+    transition: all 0.3s ease-in;
+    &.show {
+      width: 100%;
+      height: 30vh;
+      top: 99%;
+      flex-direction: column;
+      background-color: variables.$purpleColor;
+      opacity: 0.8;
+      transition: all 0.1s ease-out;
+    }
   }
   li {
     margin: 0;
     font-size: 1.25rem;
     font-weight: 600;
   }
-  ul.show {
-    width: 100%;
-    height: 30vh;
-    top: 9%;
-    flex-direction: column;
-    background-color: variables.$purpleColor;
+  a .nav-btn span.show {
+    transition: all 0.3s ease-out;
+    transform-origin: 3px 0px;
+    &.one {
+      transform: rotate(45deg);
+    }
+    &.two {
+      opacity: 0;
+    }
+    &.three {
+      transform: rotate(-45deg);
+    }
   }
 }
+
 @include media.breakDown(medium) {
   li {
-    font-size: 75%;
+    font-size: 85%;
   }
 }
 a .nav-btn span {
@@ -52,5 +82,9 @@ a .nav-btn span {
   height: 1px;
   width: 2rem;
   background-color: variables.$whiteColor;
-  margin-top: 10px;
+  transition: all 0.3s ease-in-out;
+
+  &:not(:first-child) {
+    margin-top: 8px;
+  }
 }

@@ -21,7 +21,6 @@
   }
   @include media.breakUp(x-large) {
     min-height: 65vh;
-    // min-height: fit-content;
     background-size: 1366px 100%;
     margin: 0 auto;
   }
@@ -35,8 +34,15 @@ h1 {
   padding-top: 6rem;
   margin-bottom: 2.5rem;
 }
-p {
-  width: 50%;
-  margin-bottom: 1rem;
-  @extend %margin-center;
+
+@include media.breakDown(medium) {
+  h1 {
+    font-size: 3.5rem;
+  }
+}
+@include media.breakDown(small) {
+  h1 {
+    font-size: 2.5rem;
+    line-height: 4.5rem;
+  }
 }

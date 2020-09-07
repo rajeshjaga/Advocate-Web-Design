@@ -5,12 +5,15 @@
 h2 {
   @extend %card-heading-padding;
   font-size: 2.625rem;
+  @include media.breakDown(medium) {
+    font-size: 28px;
+    padding: 50px;
+  }
 }
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(18.125rem, 1fr));
-  padding: 0 3.4375rem;
-  @extend %mobile-margin-center;
+  margin: 0 3.4375rem 5rem;
   column-gap: 1rem;
   row-gap: 2rem;
   .card {
@@ -21,7 +24,24 @@ h2 {
     background: rgb(107, 99, 99);
     @include media.breakDown(small) {
       height: 211px;
-      width: 264px;
     }
   }
+  @include media.breakDown(small) {
+    margin: 0 56px 4.5rem;
+    column-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(16.5rem, 1fr));
+  }
+}
+p {
+  cursor: pointer;
+  text-decoration: underline;
+  @include helper.widthMargin(auto);
+}
+.cards {
+  .card.disabled {
+    display: none;
+  }
+}
+#closeaccordian {
+  display: none;
 }
