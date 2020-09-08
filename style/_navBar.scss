@@ -4,6 +4,7 @@
 @use 'src/helper';
 nav {
   position: sticky;
+  width: 100%;
   top: 0;
   left: 0;
   @extend %navPadding;
@@ -59,7 +60,7 @@ a {
     font-size: 1.25rem;
     font-weight: 600;
   }
-  a .nav-btn span.show {
+  button .nav-btn span.show {
     transition: all 0.3s ease-out;
     transform-origin: 3px 0px;
     &.one {
@@ -79,7 +80,12 @@ a {
     font-size: 85%;
   }
 }
-a .nav-btn span {
+button {
+  cursor: pointer;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+button .nav-btn span {
   display: block;
   height: 1px;
   width: 2rem;

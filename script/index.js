@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const accordiano = document.getElementById('accordian');
     const closeAccordiano = document.getElementById('closeaccordian');
     const disabledCards = document.querySelectorAll('.disabled');
+    const mediaQuery = window.matchMedia('(max-width:768px)');
+    const phoneNumber = document.querySelector('.phone');
     //event listeners
     navButton.addEventListener('click', () => {
         ul.classList.toggle('show');
@@ -31,5 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 closeAccordiano.style.display = 'none';
             }
         })
-    })
+    });
+    if (mediaQuery.matches) {
+        alert("hello mediaQuery");
+    }
 })  

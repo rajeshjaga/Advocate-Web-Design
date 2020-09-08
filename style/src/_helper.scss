@@ -50,6 +50,14 @@
     margin: 0 auto;
   }
 }
+.mobile-flex {
+  //device width below 1199px
+  @include media.breakDown(small) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
 %margin-center,
 .margin-center {
   //not device specific

@@ -94,6 +94,14 @@ nav {
   }
 }
 
+@media (max-width: 42.4375rem) {
+  .mobile-flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 .margin-center {
   margin: 0 auto;
 }
@@ -133,6 +141,7 @@ nav {
 
 nav {
   position: sticky;
+  width: 100%;
   top: 0;
   left: 0;
   background: #1e043b;
@@ -196,17 +205,17 @@ a {
     font-weight: 600;
   }
 
-  a .nav-btn span.show {
+  button .nav-btn span.show {
     transition: all 0.3s ease-out;
     transform-origin: 3px 0px;
   }
-  a .nav-btn span.show.one {
+  button .nav-btn span.show.one {
     transform: rotate(45deg);
   }
-  a .nav-btn span.show.two {
+  button .nav-btn span.show.two {
     opacity: 0;
   }
-  a .nav-btn span.show.three {
+  button .nav-btn span.show.three {
     transform: rotate(-45deg);
   }
 }
@@ -215,14 +224,20 @@ a {
     font-size: 85%;
   }
 }
-a .nav-btn span {
+button {
+  cursor: pointer;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+button .nav-btn span {
   display: block;
   height: 1px;
   width: 2rem;
   background-color: #fcfcfc;
   transition: all 0.3s ease-in-out;
 }
-a .nav-btn span:not(:first-child) {
+button .nav-btn span:not(:first-child) {
   margin-top: 8px;
 }
 
@@ -344,9 +359,11 @@ footer {
   color: #dbdbdb;
 }
 footer .address h3 {
+  font-size: 32px;
   padding-top: 40px;
 }
 footer .address h5 {
+  font-size: 24px;
   padding-top: 20px;
 }
 footer .address .actual-address {
@@ -361,13 +378,17 @@ footer .phone,
 footer .mail {
   margin-top: 20px;
 }
+footer .phone img,
+footer .mail img {
+  height: auto;
+  width: 15px;
+  object-fit: cover;
+}
 footer h3,
 footer h5 {
   color: #fcfcfc;
 }
-footer .actual-address img,
-footer .phone img,
-footer .mail img {
+footer .actual-address img {
   height: auto;
   width: 15px;
   object-fit: cover;

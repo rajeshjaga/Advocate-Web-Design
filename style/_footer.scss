@@ -13,9 +13,11 @@ footer {
   @extend %footer-padding;
   .address {
     h3 {
+      font-size: 32px;
       padding-top: 40px;
     }
     h5 {
+      font-size: 24px;
       padding-top: 20px;
     }
     .actual-address {
@@ -31,14 +33,17 @@ footer {
   .phone,
   .mail {
     margin-top: 20px;
+    & img {
+      height: auto;
+      width: 15px;
+      object-fit: cover;
+    }
   }
   h3,
   h5 {
     color: variables.$whiteColor;
   }
-  .actual-address img,
-  .phone img,
-  .mail img {
+  .actual-address img {
     height: auto;
     width: 15px;
     object-fit: cover;
