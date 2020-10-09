@@ -1,6 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&display=swap");
 html {
   box-sizing: border-box;
   font-size: 100%;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -9,13 +11,15 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+  line-height: 1.6;
 }
 
 body {
   font-size: 1rem;
-  font-family: "Poppins", sans-serif;
+  font-family: "Merriweather", serif;
   box-sizing: inherit;
   overflow-x: hidden;
+  letter-spacing: 1px;
 }
 @media (min-width: 87.5rem) {
   body {
@@ -39,6 +43,11 @@ li {
 a {
   text-decoration: none;
   color: black;
+  outline: none;
+}
+
+button {
+  outline: none;
 }
 
 nav {
@@ -46,9 +55,9 @@ nav {
   padding-bottom: 0.9375rem;
 }
 
-h2 {
-  padding-top: 7.875rem;
-  padding-bottom: 8.5rem;
+h2.card-header {
+  padding-top: 4.875rem;
+  padding-bottom: 5.5rem;
 }
 
 footer {
@@ -87,7 +96,7 @@ nav {
 }
 
 @media (max-width: 42.4375rem) {
-  footer .address .actual-address,
+  footer .address .actual-address, .team__member,
 .mobile-margin-center {
     width: 100%;
     margin: 0 auto;
@@ -145,7 +154,7 @@ nav {
   top: 0;
   left: 0;
   background: #1e043b;
-  z-index: 1;
+  z-index: 1000000000;
 }
 @media (max-width: 42.4375rem) {
   nav {
@@ -243,28 +252,8 @@ button .nav-btn span:not(:first-child) {
 
 .hero {
   min-width: 100%;
-  min-height: 90vh;
-  background: url("/img/Hero@2x.png") #eee;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-blend-mode: darken;
-  padding-top: 5rem;
-}
-@media (max-width: 87.4375rem) {
-  .hero {
-    background-image: url("/img/Hero@2x.png");
-  }
-}
-@media (max-width: 63.9375rem) {
-  .hero {
-    background-image: url("/img/Hero-T@2x.png");
-    background-position: center center;
-  }
-}
-@media (max-width: 42.4375rem) {
-  .hero {
-    background-image: url("/img/Hero-M@2x.png");
-  }
+  min-height: 80vh;
+  padding-top: 0rem;
 }
 @media (min-width: 87.5rem) {
   .hero {
@@ -284,6 +273,14 @@ h1 {
   margin-bottom: 2.5rem;
 }
 
+.above-layer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}
+
 @media (max-width: 63.9375rem) {
   h1 {
     font-size: 3.5rem;
@@ -295,6 +292,47 @@ h1 {
     line-height: 4.5rem;
   }
 }
+.slide-container {
+  height: 80vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.slide-container:after {
+  content: "";
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-image: linear-gradient(to bottom, rgba(145, 145, 145, 0.459), rgba(1, 1, 1, 0.596));
+}
+
+.slides {
+  display: flex;
+  z-index: 1;
+  transition: transform 0.5s ease-in-out;
+}
+.slides img {
+  display: inline-block;
+  height: 80vh;
+  min-width: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+.slides img:nth-child(1) {
+  object-position: 10% 20%;
+}
+.slides img:nth-child(3) {
+  object-position: 10% 10%;
+}
+.slides img:nth-child(4) {
+  object-position: 10% 10%;
+  width: 70%;
+}
+
 h2 {
   font-size: 2.625rem;
 }
@@ -313,11 +351,14 @@ h2 {
   row-gap: 2rem;
 }
 .cards .card {
+  position: relative;
   width: 100%;
   height: 23.5625rem;
   filter: drop-shadow(0rem 0.875rem 1.75rem rgba(0, 0, 0, 0.14));
   border-radius: 0.3125rem;
   background: #6b6363;
+  overflow: hidden;
+  cursor: pointer;
 }
 @media (max-width: 42.4375rem) {
   .cards .card {
@@ -331,8 +372,8 @@ h2 {
     grid-template-columns: repeat(auto-fit, minmax(16.5rem, 1fr));
   }
 }
-
-p {
+.cards a {
+  color: #262626;
   cursor: pointer;
   text-decoration: underline;
   width: auto;
@@ -347,6 +388,99 @@ p {
 
 #closeaccordian {
   display: none;
+}
+
+.card img {
+  height: 100%;
+  width: 125%;
+  object-fit: cover;
+  object-position: -50px 0px;
+}
+.card img.labour {
+  width: 100%;
+  object-position: -240px center;
+}
+.card img.civil {
+  object-position: -150px center;
+}
+.card img.criminal {
+  width: 150%;
+  object-position: -160px center;
+}
+.card img.property {
+  object-position: -100px center;
+}
+.card img.supreme {
+  width: 100%;
+  object-position: -160px center;
+}
+.card img.highcourt {
+  object-position: -100px center;
+}
+@media (max-width: 42.4375rem) {
+  .card img.labour {
+    height: 150%;
+    object-position: -250px bottom;
+  }
+  .card img.civil, .card img.criminal, .card img.property, .card img.supreme {
+    height: 150%;
+    object-position: center top;
+  }
+  .card img.highcourt {
+    height: 150%;
+    object-position: -60px top;
+  }
+}
+
+.cards h3 {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  padding: 20px 0;
+  width: 100%;
+  background: rgba(63, 63, 63, 0.781);
+  text-align: center;
+  color: #fcfcfc;
+}
+
+#team {
+  background: #dbdbdb;
+  min-height: 65vh;
+  padding: 3.4375rem;
+  text-align: center;
+}
+
+.team-member-groups {
+  display: flex;
+  justify-content: space-around;
+  align-items: start;
+  flex-wrap: wrap;
+}
+
+.team__member {
+  background: #fcfcfc;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  filter: drop-shadow(0px 10px 20px rgba(0, 0, 0, 0.3));
+  margin-top: 2rem;
+  margin-right: 2rem;
+  text-align: center;
+}
+.team__member img {
+  height: 250px;
+  width: 250px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+@media (max-width: 42.4375rem) {
+  .team__member img {
+    height: 150px;
+    width: 150px;
+  }
+}
+
+p.study {
+  text-decoration: none;
 }
 
 footer {
@@ -364,7 +498,7 @@ footer .address h3 {
 }
 footer .address h5 {
   font-size: 24px;
-  padding-top: 20px;
+  padding-top: 12px;
 }
 footer .address .actual-address {
   width: 60%;
@@ -460,6 +594,13 @@ footer .phone img,
 footer .mail img {
     padding: 10px 0;
   }
+}
+
+#about img {
+  height: 50vh;
+}
+#about > {
+  width: 50%;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -3,22 +3,8 @@
 @use 'src/helper';
 .hero {
   min-width: 100%;
-  min-height: 90vh;
-  background: url("/img/Hero@2x.png") #eee;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-blend-mode: darken;
-  padding-top: 5rem;
-  @include media.breakDown(large) {
-    background-image: url("/img/Hero@2x.png");
-  }
-  @include media.breakDown(medium) {
-    background-image: url("/img/Hero-T@2x.png");
-    background-position: center center;
-  }
-  @include media.breakDown(small) {
-    background-image: url("/img/Hero-M@2x.png");
-  }
+  min-height: 80vh;
+  padding-top: 0rem;
   @include media.breakUp(x-large) {
     min-height: 65vh;
     background-size: 1366px 100%;
@@ -35,6 +21,13 @@ h1 {
   margin-bottom: 2.5rem;
 }
 
+.above-layer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}
 @include media.breakDown(medium) {
   h1 {
     font-size: 3.5rem;
@@ -44,5 +37,49 @@ h1 {
   h1 {
     font-size: 2.5rem;
     line-height: 4.5rem;
+  }
+}
+
+.slide-container {
+  height: 80vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  &:after {
+    content: "";
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(145, 145, 145, 0.459),
+      rgba(1, 1, 1, 0.596)
+    );
+  }
+}
+.slides {
+  display: flex;
+  z-index: 1;
+  transition: transform 0.5s ease-in-out;
+  img {
+    display: inline-block;
+    height: 80vh;
+    min-width: 100%;
+    object-fit: cover;
+    object-position: center center;
+    &:nth-child(1) {
+      object-position: 10% 20%;
+    }
+    &:nth-child(3) {
+      object-position: 10% 10%;
+    }
+    &:nth-child(4) {
+      object-position: 10% 10%;
+      width: 70%;
+    }
   }
 }

@@ -11,7 +11,7 @@ nav {
   @extend %main-padding;
 
   background: variables.$purpleColor;
-  z-index: 1;
+  z-index: 1000000000;
   @include media.breakDown(small) {
     padding: spacing.$navSPadding;
   }

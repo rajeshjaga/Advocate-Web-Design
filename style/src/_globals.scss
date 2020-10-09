@@ -1,7 +1,9 @@
 @use 'media';
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&display=swap");
 html {
   box-sizing: border-box;
   font-size: 100%;
+  scroll-behavior: smooth;
 }
 *,
 *:after,
@@ -9,12 +11,15 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+  line-height: 1.6;
 }
 body {
   font-size: 1rem;
-  font-family: "Poppins", sans-serif;
+  font-family: "Merriweather", serif;
   box-sizing: inherit;
   overflow-x: hidden;
+  letter-spacing: 1px;
+
   @include media.breakUp(x-large) {
     width: 1366px;
     display: flex;
@@ -32,4 +37,8 @@ li {
 a {
   text-decoration: none;
   color: black;
+  outline: none;
+}
+button {
+  outline: none;
 }
