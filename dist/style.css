@@ -596,11 +596,17 @@ footer .mail img {
   }
 }
 
-#about img {
-  height: 50vh;
+.about {
+  width: 100%;
 }
-#about > {
+.about img {
+  height: 70vh;
+  object-fit: cover;
   width: 50%;
+}
+.about .about-me {
+  width: 50%;
+  padding: 0 1.5rem;
 }
 
 /*# sourceMappingURL=style.css.map */
