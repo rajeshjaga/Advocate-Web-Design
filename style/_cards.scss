@@ -108,3 +108,13 @@ h2 {
   text-align: center;
   color: variables.$whiteColor;
 }
+// @include media.breakDown(small) {
+//   .card-section {
+//     height: 150vh;
+//   }
+// }
+// @include media.breakDown(medium) {
+//   .card-section {
+//     height: 150vh;
+//   }
+// }
