@@ -90,3 +90,14 @@
     display: none;
   }
 }
+.container,
+%container {
+  width: 80%;
+  @extend %margin-center;
+}
+.break-up-container {
+  @include media.breakUp(x-large) {
+    width: 80%;
+    margin: 0 auto;
+  }
+}

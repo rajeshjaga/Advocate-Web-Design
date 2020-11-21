@@ -19,9 +19,7 @@ body {
   box-sizing: inherit;
   overflow-x: hidden;
   letter-spacing: 1px;
-
   @include media.breakUp(x-large) {
-    width: 1366px;
     display: flex;
     flex-flow: column wrap;
     margin: 0 auto;

@@ -3,7 +3,7 @@
 @use 'src/helper';
 .hero {
   min-width: 100%;
-  min-height: 80vh;
+  min-height: 50vh;
   padding-top: 0rem;
   @include media.breakUp(x-large) {
     min-height: 65vh;
