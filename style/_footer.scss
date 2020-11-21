@@ -106,7 +106,12 @@ footer {
     .contact {
       margin-top: 20px;
     }
-    .actual-address,
+    .actual-address {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
     .phone,
     .mail {
       flex-direction: column;

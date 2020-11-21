@@ -81,5 +81,15 @@ h1 {
       object-position: 10% 10%;
       width: 70%;
     }
+    @include media.breakDown(small) {
+      &:nth-child(3) {
+        object-position: 49% 50%;
+        width: 100%;
+      }
+      &:nth-child(4) {
+        object-position: 60% 50%;
+        width: 100%;
+      }
+    }
   }
 }

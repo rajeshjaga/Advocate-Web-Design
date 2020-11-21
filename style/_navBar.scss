@@ -9,7 +9,6 @@ nav {
   left: 0;
   @extend %navPadding;
   @extend %main-padding;
-
   background: variables.$purpleColor;
   z-index: 1000000000;
   @include media.breakDown(small) {
